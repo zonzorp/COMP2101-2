@@ -20,6 +20,9 @@ echo "============="
 find / -type f -executable -perm -4000 -ls 2>/dev/null | sort -k 5
 echo ""
 
+echo "12 largest files:"
+echo "================="
+sudo find / -type f -printf '%s %p\n' -ls 2>/dev/null | sort -nr | head -12 
 # for the task, add
 # commands to display a title
 # commands to make a list of the 12 biggest files
