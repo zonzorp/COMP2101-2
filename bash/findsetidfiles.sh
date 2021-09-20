@@ -22,7 +22,7 @@ echo ""
 
 echo "12 largest files:"
 echo "================="
-sudo find / -type f -printf '%s %p\n' -ls 2>/dev/null | sort -nr | head -12 
+find / -type f -exec ls -lsh --block-size=MB {} + 2>/dev/null | sort -rn |awk '{print $1, $4, $10}' | head -12;
 # for the task, add
 # commands to display a title
 # commands to make a list of the 12 biggest files
