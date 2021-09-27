@@ -27,4 +27,5 @@ echo "The current hostname is: "$myHostName
 echo "Please enter your student number:";read studentNumber
 desiredHostName={pc}$studentNumber
 
+grep -q $desiredHostName /etc/hosts || sed -i "s/$myHostName/$desiredHostName/" /etc/hosts ; echo "Old hostname was replaced with " $desiredHostName  
 
